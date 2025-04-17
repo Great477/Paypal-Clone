@@ -298,9 +298,8 @@ app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public", "404.html"))
 })
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
+app.listen(PORT, "0.0.0.0", () => {  // ← Add "0.0.0.0" here
+  console.log(`Server running on port ${PORT}`);
+});
 
 module.exports = app
